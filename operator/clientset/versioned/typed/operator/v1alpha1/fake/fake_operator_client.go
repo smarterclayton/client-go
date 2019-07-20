@@ -16,6 +16,10 @@ func (c *FakeOperatorV1alpha1) ImageContentSourcePolicies() v1alpha1.ImageConten
 	return &FakeImageContentSourcePolicies{c}
 }
 
+func (c *FakeOperatorV1alpha1) Supports() v1alpha1.SupportInterface {
+	return &FakeSupports{c}
+}
+
 // RESTClient returns a RESTClient that is used to communicate
 // with API server by this client implementation.
 func (c *FakeOperatorV1alpha1) RESTClient() rest.Interface {

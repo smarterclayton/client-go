@@ -10,6 +10,8 @@ import (
 type Interface interface {
 	// ImageContentSourcePolicies returns a ImageContentSourcePolicyInformer.
 	ImageContentSourcePolicies() ImageContentSourcePolicyInformer
+	// Supports returns a SupportInformer.
+	Supports() SupportInformer
 }
 
 type version struct {
@@ -26,4 +28,9 @@ func New(f internalinterfaces.SharedInformerFactory, namespace string, tweakList
 // ImageContentSourcePolicies returns a ImageContentSourcePolicyInformer.
 func (v *version) ImageContentSourcePolicies() ImageContentSourcePolicyInformer {
 	return &imageContentSourcePolicyInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
+}
+
+// Supports returns a SupportInformer.
+func (v *version) Supports() SupportInformer {
+	return &supportInformer{factory: v.factory, tweakListOptions: v.tweakListOptions}
 }

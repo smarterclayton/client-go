@@ -70,6 +70,8 @@ func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource
 		// Group=operator.openshift.io, Version=v1alpha1
 	case v1alpha1.SchemeGroupVersion.WithResource("imagecontentsourcepolicies"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Operator().V1alpha1().ImageContentSourcePolicies().Informer()}, nil
+	case v1alpha1.SchemeGroupVersion.WithResource("supports"):
+		return &genericInformer{resource: resource.GroupResource(), informer: f.Operator().V1alpha1().Supports().Informer()}, nil
 
 	}
 

@@ -5,3 +5,7 @@ package v1alpha1
 // ImageContentSourcePolicyListerExpansion allows custom methods to be added to
 // ImageContentSourcePolicyLister.
 type ImageContentSourcePolicyListerExpansion interface{}
+
+// SupportListerExpansion allows custom methods to be added to
+// SupportLister.
+type SupportListerExpansion interface{}
